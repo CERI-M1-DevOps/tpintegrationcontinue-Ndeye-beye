@@ -46,6 +46,7 @@ public class ListeSimpleTest {
     @Test
     public void toStringDonneTousLesNoeuds() {
         System.out.println(listeATester);
+        assertEquals("ListeSimple()", listeATester.toString());
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
