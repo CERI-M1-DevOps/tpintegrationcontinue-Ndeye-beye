@@ -63,6 +63,7 @@ class ListeSimpleTest {
         assertEquals(4, listeATester.tete.getSuivant().getElement());
     }
 
+
     @Test
     void modifieTous() {
         listeATester.ajout(1);
@@ -114,7 +115,7 @@ class ListeSimpleTest {
     }
 
     @Test
-    void supprimeTousListesVidePremier() {
+    void supprimeTousListesVides() {
         listeATester.supprimePremier(1);
         assertNull(listeATester.tete);
         assertEquals(0, listeATester.getSize());

@@ -15,11 +15,18 @@ public class ListeSimple {
 
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
-        while (courant != null && courant.getElement() != element)
+
+        // Parcourt la liste pour trouver le premier noeud avec l'élément correspondant
+        while (courant != null && !courant.getElement().equals(element)) {
             courant = courant.getSuivant();
-        if (courant != null)
+        }
+
+        // Si le noeud est trouvé, modifie sa valeur
+        if (courant != null) {
             courant.setElement(nouvelleValeur);
+        }
     }
+
 
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
