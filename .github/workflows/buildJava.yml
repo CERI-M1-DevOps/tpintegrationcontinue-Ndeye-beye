@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build and Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # ou s'exécute le job
 
     steps:
       # Étape 1: Récupérer le dépôt avec l'action actions/checkout@v4
@@ -26,3 +26,8 @@ jobs:
       # Étape 3: Compiler et tester le projet avec Maven
       - name: Build with Maven
         run: mvn -B package
+
+      - name: Build with Sonar
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar-Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
