@@ -88,8 +88,10 @@ class ListeSimpleTest {
         listeATester.ajout(2);
         listeATester.ajout(3);
         listeATester.supprimePremier(3);
+        listeATester.supprimeTous(2);
         assertEquals("ListeSimple(Noeud(2), Noeud(1))",listeATester.toString());
         assertEquals(2, listeATester.getSize());
+
     }
 
     @Test
