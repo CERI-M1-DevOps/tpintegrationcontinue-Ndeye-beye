@@ -113,6 +113,23 @@ class ListeSimpleTest {
         assertEquals( "ListeSimple(Noeud(4), Noeud(3), Noeud(2))",listeATester.toString());
         assertEquals(3, listeATester.getSize());
     }
+    @Test
+    void supprimeTousElementIntermediaire() {
+        // Ajouter plusieurs éléments dans la liste
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.ajout(3);
+
+        // Appeler la méthode supprimeTous pour un élément qui est dans la liste (mais pas en tête)
+        listeATester.supprimeTous(2);
+
+        // Vérifier que tous les éléments égaux à 2 ont été supprimés
+        //assertNull(listeATester.rechercher(2));
+
+        // Vérifier la taille pour confirmer que la suppression a fonctionné
+        assertEquals(2, listeATester.getSize());
+    }
+
 
     @Test
     void supprimeTousListesVide() {
